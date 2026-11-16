@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <application android:name=".PocketApp" android:label="PocketMC" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher"
+        android:allowBackup="false" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity" android:exported="true" android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".ServerService" android:exported="false"/>
+        <receiver android:name=".CopyReceiver" android:exported="false"/>
+        <provider android:name=".FilesProvider" android:authorities="com.pocketmc.app.docs" android:exported="true"
+            android:grantUriPermissions="true" android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter><action android:name="android.content.action.DOCUMENTS_PROVIDER"/></intent-filter>
+        </provider>
+    </application>
+</manifest>

@@ -1,0 +1,6 @@
+PocketMC PC
+1) Python 3.9+ kur (python.org, "Add to PATH" isaretli)
+2) build.bat'a cift tikla -> dist\PocketMC.exe olusur
+3) Sunucu icin Java gerekir (Adoptium Temurin): 26.x -> 25, 1.20.5+ -> 21, digerleri 17
+Hizli deneme (exe olmadan): python pocketmc_pc.py
+Veriler: %APPDATA%\PocketMC
